@@ -1,18 +1,18 @@
-import React from 'react'
-import {Route,Routes} from 'react-router-dom'
-import Home from './pages/Home'
-import ApplyJob from './pages/ApplyJob'
-import Application from './pages/Application'
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Home from './components/home'
+function App() {
+  const [count, setCount] = useState(0)
 
-const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/apply-job/:id' element={<ApplyJob/>}/>
-        <Route path='/applications' element={<Application/>}/>
-      </Routes>
-    </div>
+    <>
+      <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+    <Home/>
+    </>
   )
 }
 
