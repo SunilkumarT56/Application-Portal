@@ -7,14 +7,22 @@ const app = express();
 import "./config/instrument.js";
 import * as Sentry from "@sentry/node";
 import { clerkWebhooks } from "./controllers/webhooks.js";
+
+import companyRoutes from "./routes/companyRoutes.js";
+import connectClodinary from "./config/cloudinary.js";
+
 await connedtDB();
+await connectClodinary();
 
 //Middlewares
 app.use(cors());
 app.use(express.json());
 
+//routes
+app.use("api/company", companyRoutes);
+
 app.get("/", (req, res) => {
-  res.send("Sorry di pondatti priya 😩");
+  res.send("");
 });
 
 app.get("/debug-sentry", function mainHandler(req, res) {
