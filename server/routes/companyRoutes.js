@@ -8,7 +8,6 @@ import {
   postJob,
   registerCompany,
   changeJobApplicationsStatus,
-  changeVisiblity,
 } from "../controllers/companyController.js";
 import upload from "../config/multer.js";
 

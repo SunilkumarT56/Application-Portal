@@ -1,4 +1,4 @@
-import Company from "../models/Company";
+import Company from "../models/Company.js";
 import bcrypt from "bcrypt";
 import { v2 as cloudinary } from "cloudinary";
 export const registerCompany = async (req, res) => {
@@ -38,7 +38,7 @@ export const registerCompany = async (req, res) => {
         image: company.image,
       },
     });
-    
+
   } catch (error) {}
 };
 
