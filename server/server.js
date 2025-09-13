@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Api is working");
+  res.send("Sorry di pondatti priya 😩");
 });
 
 app.get("/debug-sentry", function mainHandler(req, res) {
