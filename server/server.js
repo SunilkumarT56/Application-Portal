@@ -22,7 +22,7 @@ app.use(express.json());
 app.use("api/company", companyRoutes);
 
 app.get("/", (req, res) => {
-  res.send("");
+  res.send("api is working");
 });
 
 app.get("/debug-sentry", function mainHandler(req, res) {
