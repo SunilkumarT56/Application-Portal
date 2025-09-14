@@ -2,7 +2,7 @@
 .env
 node_modules/
 #frontend
-assets/
+src/assets/
 # Logs
 logs
 *.log
