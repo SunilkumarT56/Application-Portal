@@ -2,8 +2,8 @@ import React from 'react'
 
 const Applications = () => {
   return (
-    <div>
-      
+    <div className='bg-red-600'>
+      Hello WORLD
     </div>
   )
 }
