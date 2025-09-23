@@ -3,6 +3,7 @@ import Job from "../models/Job.js";
 import bcrypt from "bcrypt";
 import { v2 as cloudinary } from "cloudinary";
 import generateToken from "../utils/generateToken.js";
+import JobApplication from "../models/jobApplication.js";
 
 export const registerCompany = async (req, res) => {
   const { name, email, password } = req.body;
@@ -84,10 +85,11 @@ export const loginCompany = async (req, res) => {
 
 export const getCompanyData = async (req, res) => {
   try {
-    const company = req.company;
+    const companydetails = req.company;
+    console.log(companydetails);
     res.json({
       success: true,
-      company,
+      companydetails,
     });
   } catch (error) {
     res.json({
@@ -132,7 +134,27 @@ export const postJob = async (req, res) => {
   }
 };
 
-export const getCompanyJobApplicants = async (req, res) => {};
+export const getCompanyJobApplicants = async (req, res) => {
+  const companyId = req.company._id;
+  try {
+    const applications = await JobApplication.find({
+      companyId,
+    })
+      .populate("userId", "name resume image")
+      .populate("jobId", "title location category level salary")
+      .exec();
+
+    res.json({
+      success: true,
+      applications,
+    });
+  } catch (error) {
+    res.json({
+      success: false,
+      message: "something went wrong",
+    });
+  }
+};
 
 export const getCompanyPostedJobs = async (req, res) => {
   try {
@@ -151,7 +173,24 @@ export const getCompanyPostedJobs = async (req, res) => {
     });
   }
 };
-export const changeJobApplicationsStatus = async (req, res) => {};
+export const changeJobApplicationsStatus = async (req, res) => {
+  const { id, status } = req.body;
+  try { 
+    const application = await JobApplication.findById({ _id :id},{status});
+    console.log(id);
+    application.status = status;
+    await application.save();
+    res.json({
+      success: true,
+      application,
+    });
+  } catch (error) {
+    res.json({
+      success: false,
+      message: "something went wrong",
+    });
+  }
+};
 
 export const changeVisiblity = async (req, res) => {
   try {

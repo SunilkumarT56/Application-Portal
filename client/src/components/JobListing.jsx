@@ -9,7 +9,7 @@ const JobListing = () => {
 
   const [showFilter,setShowFilter]=useState(true)
   return (
-    <div className='container 2xl:px-4 mx-auto flex flex-col lg:space-y-8 py-8'>
+    <div className='container 2xl:px-4 mx-auto flex flex-row lg:space-y-8 py-8'>
         
     {/*Sidebar */}
 
@@ -76,7 +76,7 @@ const JobListing = () => {
 
 
     {/* Job Listings*/ }
-    <section className='w-full lg:w-3/4 text-gray-800 max-lg:px-4 '>
+    <section className='w-full lg:w-3/4 text-gray-800 max-lg:px-2 '>
         <h3 className='font-medium text-3xl py-2' id='job-list'>Latest Jobs</h3>
         <p className='mb-8'>Get your desired job from top companies</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4'>
