@@ -7,3 +7,54 @@
 *{
     font-family: Outfit;
 }
+
+@layer bse{
+    html{
+        scroll-behavior:smooth;
+    }
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.rich-text {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  line-height: 1.6;
+}
+
+/* Paragraph text */
+.rich-text p {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* Section Headings */
+.rich-text h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* Ordered lists - force numbers */
+.rich-text ol {
+  margin: 0;
+  padding-left: 25px;
+  list-style-type: decimal !important; /* ✅ force numbers */
+}
+
+.rich-text li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Bold text (like Key Responsibilities, Skills Required) */
+.rich-text strong {
+  font-weight: bold;
+}
