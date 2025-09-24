@@ -11,6 +11,7 @@
     "start": "nodemon server.js"
   },
   "dependencies": {
+    "@clerk/express": "^1.7.31",
     "@sentry/node": "^10.11.0",
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.7.0",
